@@ -25,8 +25,11 @@ export default function Confidentialite() {
       <h2>1. Données collectées</h2>
       <ul>
         <li>
-          <strong>Formulaire de contact</strong> : nom, email, téléphone (facultatif), sujet, message.
-          Transmis par email à notre équipe.
+          <strong>Contact direct</strong> : si vous nous écrivez à{" "}
+          <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a> ou nous
+          appelez, les informations que vous nous communiquez (nom, email, téléphone, contenu du
+          message) sont reçues uniquement par notre boîte mail personnelle / téléphone — aucun
+          stockage automatisé n'est mis en place côté site.
         </li>
         <li>
           <strong>Analytics</strong> : Cloudflare Web Analytics — métriques agrégées anonymes (pages
@@ -36,20 +39,20 @@ export default function Confidentialite() {
 
       <h2>2. Finalités</h2>
       <ul>
-        <li>Répondre à vos demandes via le formulaire de contact</li>
+        <li>Répondre à vos demandes (atelier, privatisation, partenariat, etc.)</li>
         <li>Vous renseigner sur nos ateliers, privatisations ou créateurs</li>
         <li>Améliorer la performance et l'ergonomie du site (analytics anonymes)</li>
       </ul>
 
       <h2>3. Base légale</h2>
       <p>
-        Consentement explicite (formulaire de contact, case à cocher RGPD) ou intérêt légitime
-        (analytics agrégés anonymes).
+        Exécution de mesures précontractuelles à votre demande (lorsque vous nous écrivez ou
+        appelez) ou intérêt légitime (analytics agrégés anonymes).
       </p>
 
       <h2>4. Durée de conservation</h2>
       <ul>
-        <li>Demandes de contact : 3 ans après le dernier échange</li>
+        <li>Échanges email : 3 ans après le dernier échange</li>
         <li>Analytics : agrégés sans stockage individuel</li>
       </ul>
 
@@ -76,12 +79,6 @@ export default function Confidentialite() {
       <h2>7. Hébergement</h2>
       <p>
         Le site est hébergé par {siteConfig.legal.host.name} ({siteConfig.legal.host.address}).
-      </p>
-
-      <h2>8. Email transactionnel</h2>
-      <p>
-        Les emails envoyés depuis ce site sont expédiés via Resend Inc., 2261 Market Street #5039,
-        San Francisco, CA 94114, USA. Aucune donnée n'est conservée à des fins commerciales.
       </p>
     </main>
   );

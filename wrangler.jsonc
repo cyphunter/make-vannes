@@ -16,22 +16,27 @@
   },
 
   // ─── R2 (médias boutique, ateliers, créateurs) ───────────────────────
-  // À créer avant deploy : wrangler r2 bucket create make-media
-  "r2_buckets": [
-    {
-      "binding": "MEDIA_BUCKET",
-      "bucket_name": "make-media"
-    }
-  ],
+  // ⚠️ Désactivé pour V1 (site showcase, images en /public). Pour activer :
+  //  1. wrangler r2 bucket create make-media
+  //  2. décommenter le bloc r2_buckets ci-dessous
+  // "r2_buckets": [
+  //   {
+  //     "binding": "MEDIA_BUCKET",
+  //     "bucket_name": "make-media"
+  //   }
+  // ],
 
-  // ─── KV (cache court / formulaire anti-flood) ────────────────────────
-  // À créer avant deploy : wrangler kv namespace create make-kv
-  "kv_namespaces": [
-    {
-      "binding": "KV",
-      "id": "TODO_REPLACE_WITH_REAL_KV_ID"
-    }
-  ],
+  // ─── KV (cache court / anti-flood formulaire) ────────────────────────
+  // ⚠️ Désactivé pour V1 (pas d'usage côté code actuellement). Pour activer :
+  //  1. wrangler kv namespace create make-kv
+  //  2. copier l'ID retourné dans `id` ci-dessous
+  //  3. décommenter le bloc kv_namespaces
+  // "kv_namespaces": [
+  //   {
+  //     "binding": "KV",
+  //     "id": "TODO_REPLACE_WITH_REAL_KV_ID"
+  //   }
+  // ],
 
   // ─── Vars publiques ──────────────────────────────────────────────────
   // SITE_ID = "make" — réservé en cas d'ajout futur de DB partagée
@@ -41,9 +46,8 @@
     "CONTACT_TO_EMAIL": "contact@makevannes.com"
   }
 
-  // ─── Secrets (à mettre via `wrangler secret put`) ────────────────────
-  // wrangler secret put RESEND_API_KEY
-  // wrangler secret put RESEND_WEBHOOK_SECRET
+  // ─── Aucun secret requis en V1 ───────────────────────────────────────
+  // Contact = mailto + tel direct, pas d'envoi email transactionnel.
 
   // ─── PAS de D1 ni d'auth : site showcase pur ─────────────────────────
 }

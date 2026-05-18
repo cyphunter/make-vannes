@@ -1,15 +1,14 @@
 // Augmente le type CloudflareEnv généré par `wrangler types` avec les
-// secrets (qui ne sont pas déclarés dans wrangler.jsonc mais via
-// `wrangler secret put`). À mettre à jour à chaque ajout de secret.
+// secrets éventuels (déclarés via `wrangler secret put`). Aucun secret
+// requis en V1 (showcase pur, contact direct par email/téléphone).
+// À mettre à jour si on ré-introduit un secret côté Cloudflare.
 
 interface CloudflareEnv {
-  RESEND_API_KEY?: string;
-  RESEND_WEBHOOK_SECRET?: string;
+  // Aucun secret pour l'instant.
 }
 
 declare namespace Cloudflare {
   interface Env {
-    RESEND_API_KEY?: string;
-    RESEND_WEBHOOK_SECRET?: string;
+    // Aucun secret pour l'instant.
   }
 }

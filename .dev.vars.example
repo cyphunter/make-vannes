@@ -1,0 +1,7 @@
+# Variables d'environnement pour le développement local avec wrangler.
+# Copier ce fichier vers `.dev.vars` (gitignored) et remplir les valeurs.
+#
+# Pour la prod : utiliser `wrangler secret put <KEY>` (chiffré côté Cloudflare).
+
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxx
+RESEND_WEBHOOK_SECRET=whsec_xxxxxxxxxxxxxxxxxxxxxxx

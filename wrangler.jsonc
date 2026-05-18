@@ -1,0 +1,49 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "make",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-05-05",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "workers_dev": true,
+
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".open-next/assets"
+  },
+
+  "observability": {
+    "enabled": true
+  },
+
+  // ─── R2 (médias boutique, ateliers, créateurs) ───────────────────────
+  // À créer avant deploy : wrangler r2 bucket create make-media
+  "r2_buckets": [
+    {
+      "binding": "MEDIA_BUCKET",
+      "bucket_name": "make-media"
+    }
+  ],
+
+  // ─── KV (cache court / formulaire anti-flood) ────────────────────────
+  // À créer avant deploy : wrangler kv namespace create make-kv
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "TODO_REPLACE_WITH_REAL_KV_ID"
+    }
+  ],
+
+  // ─── Vars publiques ──────────────────────────────────────────────────
+  // SITE_ID = "make" — réservé en cas d'ajout futur de DB partagée
+  "vars": {
+    "NEXT_PUBLIC_SITE_URL": "https://makevannes.com",
+    "SITE_ID": "make",
+    "CONTACT_TO_EMAIL": "contact@makevannes.com"
+  }
+
+  // ─── Secrets (à mettre via `wrangler secret put`) ────────────────────
+  // wrangler secret put RESEND_API_KEY
+  // wrangler secret put RESEND_WEBHOOK_SECRET
+
+  // ─── PAS de D1 ni d'auth : site showcase pur ─────────────────────────
+}
